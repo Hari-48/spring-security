@@ -1,0 +1,167 @@
+{
+	"info": {
+		"_postman_id": "7d00d7d5-777f-41c3-8e8c-7e89354cc051",
+		"name": "Spring security",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26389336",
+		"_collection_link": "https://dark-flare-644648.postman.co/workspace/Spring-Security~3d96572d-236f-4a4d-9add-35e84b573447/collection/26389336-7d00d7d5-777f-41c3-8e8c-7e89354cc051?action=share&source=collection_link&creator=26389336"
+	},
+	"item": [
+		{
+			"name": "STEP 1 ",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Hari@123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "hari",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/list-user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"list-user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "STEP 2.1",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n    \"id\":11,\n    \"username\": \"mahi\",\n    \"password\": \"007\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "STEP 2.2",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "007",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "mahi",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/list-user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"list-user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3.1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"mahi\",\n    \"password\": \"007\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3.2",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWhpIiwiaWF0IjoxNzQxODk0MjczLCJleHAiOjE3NDE4OTQ0NTN9.3NHA6_zkPFuNdFy-FJy1KVhop5_J-u4Pf7QFMIFAWQQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/list-user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"list-user"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
